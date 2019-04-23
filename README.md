@@ -64,9 +64,9 @@ After `TOPS` extraction 347694 data-points remain (shape: 347694x32).
 
 The `imageUrlStr` had more than one representative image for each product ID (PID). To represent each PID with one image, `imageUrlStr` was split to extract the first link (titled `PrimaryImageUrlStr`). The script for this can be found [here](./src/huew/pre_process.py#L12)
 
-Some obvious pre-processing techniques included dropping duplicates from some fileds like `productId`, `productUrl`, and `primaryImageUrlStr`.
+Some obvious pre-processing techniques included dropping duplicates from some fileds like `productId`, `productUrl`, and `primaryImageUrlStr`. The script for this can be found [here](./src/huew/pre_process.py#L20)
 
-After this **87968 data-points** remain under the TOPS category (previously 347694)
+After this **87968 data-points** remain under the TOPS category (previously _347694_)
 
 Further each data-point has 32 feature points and all of them do not seem useful. After manual examination, the following features were removed:
 
@@ -87,7 +87,7 @@ For downloading images from "TOPS" category, the script can be found [here](./sr
 For finding duplicate product listings different strategies have been tried and some are in _to-be tried_ stage.
 
 **1. Image Hashing** <br>
-For each image a "difference hash" or dHash is generated based on based on Neal Krawetz's dHash algorithm. The file hashes are then compared. The implementation can be found [here](./src/dedupe/dedupe_dhash.py) 
+For each image a "difference hash" or dHash is generated based on based on Neal Krawetz's dHash algorithm. The file hashes are then compared. The implementation can be found [here](./src/dedupe/dedupe_dhash.py)
 
 This method seems to be fast when compared to Kmeans or Feature extraction. However, it could identify only the exact duplicates and cannot be used for identifying near duplicate files or files with minimal variation.  
 
@@ -106,7 +106,7 @@ Squeezenet has several advantages over other networks:
  - For the same accuracy of AlexNet, SqueezeNet can be 3 times faster and 500 times smaller.
  - The fire module used is Squeezenet does feature extraction at different resolutions. This takes care of the CNN limitation of not having a global context of the images.
 
-SqueezeNet generates a 512-bit feature vector for each image. First feature for all the images are extracted. Next, in a sorted loop, each image is compared with other remaining images in the loop. So, in a loop of n images, the mth image is compared with (n-m) images.
+SqueezeNet generates a 512-bit feature vector for each image. First feature for all the images are extracted. Next, in a sorted loop, each image is compared with other remaining images in the loop. So, in a loop of n images, the mth image is compared with (n-m) images (at max).
 
 **4. Haar PSI** <br>
 The Haar wavelet-based perceptual similarity index (HaarPSI) is a similarity measure for images that aims to correctly assess the perceptual similarity between two images with respect to a human viewer.
