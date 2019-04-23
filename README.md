@@ -58,11 +58,11 @@ For extracting "TOPS" category from the dataset, we check for all categories tha
  - Apparels>Kids>Girls>T-Shirts & Tops>Tops,
  - Apparels>Kids>Infants>Baby Girls>T-Shirts & Tops>Tops
 
-The scripts for extraction can be found [here](./src/huew/pre_process.py)
+The scripts for extraction can be found [here](./src/huew/pre_process.py#L5)
 
 After `TOPS` extraction 347694 data-points remain (shape: 347694x32).
 
-The `imageUrlStr` had more than one representative image for each product ID (PID). To represent each PID with one image, `imageUrlStr` was split to extract the first link (titled `PrimaryImageUrlStr`).
+The `imageUrlStr` had more than one representative image for each product ID (PID). To represent each PID with one image, `imageUrlStr` was split to extract the first link (titled `PrimaryImageUrlStr`). The script for this can be found [here](./src/huew/pre_process.py#L12)
 
 Some obvious pre-processing techniques included dropping duplicates from some fileds like `productId`, `productUrl`, and `primaryImageUrlStr`.
 
