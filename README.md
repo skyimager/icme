@@ -43,7 +43,7 @@ icme
 ```
 
 _Data_: <br>
-the `data` folder is not a part of this git project as it was very heavy (30GB+). The same can be downloaded from the [csv file](https://huew.blob.core.windows.net/assignments/2oq-c1r) using this [script](./src/utils/download_ images.py).
+the `data` folder is not a part of this git project as it was very heavy (30GB+). The same can be downloaded from the [csv file](https://huew.blob.core.windows.net/assignments/2oq-c1r) using this [script](./src/utils/download_images.py)
 
 `main.py` is the driver file for all processing. The configuration for different experiment runs can be controlled using the `config.py`.
 
@@ -146,7 +146,7 @@ Some sample results can be seen below:
 - [ ] Explore [FAISS](https://github.com/facebookresearch/faiss).
 - [ ] Explore Kernelized Locality Sensitive Hashing [(KLSH)](https://github.com/billywan/cs341-duplicate-image-detection).
 - [ ] Explore Siamese network (Need to see if that is the optimal solution for this problem).
-- [ ] Explore [DELF]((https://github.com/tensorflow/hub/blob/master/examples/colab/tf_hub_delf_module.ipynb) for duplicate detection.
+- [ ] Explore [DELF](https://github.com/tensorflow/hub/blob/master/examples/colab/tf_hub_delf_module.ipynb) for duplicate detection.
 - [ ] Explore word2vec for identifying duplicates.
 - [ ] Integration with a database (MongoDB) for faster search results.
 - [ ] Integration with a Apache Spark (PySpark) for faster processing.
