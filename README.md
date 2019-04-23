@@ -66,7 +66,7 @@ The `imageUrlStr` had more than one representative image for each product ID (PI
 
 Some obvious pre-processing techniques included dropping duplicates from some fileds like `productId`, `productUrl`, and `primaryImageUrlStr`.
 
-After this **87968 data-points** remain.
+After this **87968 data-points** remain under the TOPS category (previously 347694)
 
 Further each data-point has 32 feature points and all of them do not seem useful. After manual examination, the following features were removed:
 
@@ -87,7 +87,7 @@ For downloading images from "TOPS" category, the script can be found [here](./sr
 For finding duplicate product listings different strategies have been tried and some are in _to-be tried_ stage.
 
 **1. Image Hashing** <br>
-For each image a "difference hash" or dHash is generated based on based on Neal Krawetz's dHash algorithm. The file hashes are then compared. The implementation can be found [here](./src/dedupe/dedupe_dhash.py)
+For each image a "difference hash" or dHash is generated based on based on Neal Krawetz's dHash algorithm. The file hashes are then compared. The implementation can be found [here](./src/dedupe/dedupe_dhash.py) 
 
 This method seems to be fast when compared to Kmeans or Feature extraction. However, it could identify only the exact duplicates and cannot be used for identifying near duplicate files or files with minimal variation.  
 
